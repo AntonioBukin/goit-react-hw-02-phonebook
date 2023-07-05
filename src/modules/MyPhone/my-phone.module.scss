@@ -14,11 +14,29 @@
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    gap: 40pz;
+    gap: 40px;
 }
 
 .form {
     border: 1px solid;
     border-radius: 10px;
-    padding: 10px;
+    padding: 15px;
+}
+
+.formGroup {
+    margin-bottom: 15px;
+    display: grid;
+    gap: 10px;
+}
+
+.textField {
+    padding: 5px;
+}
+
+.list {
+    margin: 15px 0;
+
+    &Item {
+        margin-bottom: 10px;
+    }
 }
