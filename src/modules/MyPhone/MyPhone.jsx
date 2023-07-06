@@ -30,7 +30,7 @@ class MyPhone extends Component {
         e.preventDefault();
         if(this.isDublicate()) {
             const {name, number} = this.state;
-            alert(`${name} - ${number} is alredy exist`);
+            alert(`${name} - ${number} is alredy in contacts`);
             return;
         }
         this.setState(prevState => {
