@@ -28,6 +28,11 @@ class MyPhone extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
+        if(this.isDublicate()) {
+            const {name, number} = this.state;
+            alert(`${name} - ${number} is alredy exist`);
+            return;
+        }
         this.setState(prevState => {
             const {name, number, contacts} = prevState;
             const newNumber = {
@@ -38,6 +43,18 @@ class MyPhone extends Component {
 
             return {contacts: [...contacts, newNumber], name: "", number: ""}
         })
+    }
+
+    isDublicate() {
+        const {name, number, contacts} = this.state;
+        const normalizedName = name.toLowerCase();
+        const normalizedNumber = number.toLowerCase();
+
+        const dublicate = contacts.find(contact => {
+            return (contact.name.toLowerCase() === normalizedName && contact.number.toLowerCase() === normalizedNumber)
+        });
+
+        return Boolean(dublicate);
     }
 
     render() { //пишемо метод render, який буде повертати розмітку
