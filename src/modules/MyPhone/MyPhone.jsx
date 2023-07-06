@@ -18,6 +18,13 @@ class MyPhone extends Component {
           number: "",
     }
 
+    handleChange = ({target}) => {
+        const {name, value} = target; //value - значення яке ми записуємо в state
+        console.log(name);
+        console.log(value);
+
+    }
+
     render() { //пишемо метод render, який буде повертати розмітку
         const {contacts} = this.state;
 
@@ -28,8 +35,6 @@ class MyPhone extends Component {
 
         ))
 
-
-
         return(
             <div className={styles.wrapper}>
                 <h3 className={styles.title}>My Phone</h3>
@@ -38,9 +43,9 @@ class MyPhone extends Component {
                         <form className={styles.form}>
                             <div className={styles.formGroup}>
                                 <label>Name</label>
-                                <input className={styles.textField} placeholder="add name"
+                                <input name="name" onChange={this.handleChange} className={styles.textField} placeholder="add name"
                                   type="text"
-                                  name="name"
+                                //   name="name"
                                   pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
                                   title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
                                   required/>
@@ -48,9 +53,9 @@ class MyPhone extends Component {
                             </div>
                             <div className={styles.formGroup}>
                                 <label>Number</label>
-                                <input className={styles.textField} placeholder="add number"
+                                <input name="number" onChange={this.handleChange} className={styles.textField} placeholder="add number"
                                   type="text"
-                                  name="name"
+                                //   name="name"
                                   pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
                                   title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
                                   required/>
