@@ -1,4 +1,5 @@
 import { Component } from "react";
+import { nanoid } from "nanoid";
 
 import MyPhoneBlock from "./MyPhoneBlock/MyPhoneBlock";
 
@@ -20,9 +21,23 @@ class MyPhone extends Component {
 
     handleChange = ({target}) => {
         const {name, value} = target; //value - значення яке ми записуємо в state
-        console.log(name);
-        console.log(value);
+        this.setState({
+            [name]: value
+        })
+    }
 
+    handleSubmit = (e) => {
+        e.preventDefault();
+        this.setState(prevState => {
+            const {name, number, contacts} = prevState;
+            const newNumber = {
+                id: nanoid(),
+                name,
+                number,
+            }
+
+            return {contacts: [...contacts, newNumber]}
+        })
     }
 
     render() { //пишемо метод render, який буде повертати розмітку
@@ -40,7 +55,7 @@ class MyPhone extends Component {
                 <h3 className={styles.title}>My Phone</h3>
                 <div className={styles.blocks}>
                     <MyPhoneBlock title="">
-                        <form className={styles.form}>
+                        <form onSubmit={this.handleSubmit} className={styles.form}>
                             <div className={styles.formGroup}>
                                 <label>Name</label>
                                 <input name="name" onChange={this.handleChange} className={styles.textField} placeholder="add name"
