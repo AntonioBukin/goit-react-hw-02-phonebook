@@ -36,12 +36,12 @@ class MyPhone extends Component {
                 number,
             }
 
-            return {contacts: [...contacts, newNumber]}
+            return {contacts: [...contacts, newNumber], name: "", number: ""}
         })
     }
 
     render() { //пишемо метод render, який буде повертати розмітку
-        const {contacts} = this.state;
+        const {name, number, contacts} = this.state;
 
         const elements = contacts.map(({id, name, number}) => (
             <li className={styles.listItem} key={id}>
@@ -58,7 +58,7 @@ class MyPhone extends Component {
                         <form onSubmit={this.handleSubmit} className={styles.form}>
                             <div className={styles.formGroup}>
                                 <label>Name</label>
-                                <input name="name" onChange={this.handleChange} className={styles.textField} placeholder="add name"
+                                <input value={name} name="name" onChange={this.handleChange} className={styles.textField} placeholder="add name"
                                   type="text"
                                 //   name="name"
                                   pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
@@ -68,7 +68,7 @@ class MyPhone extends Component {
                             </div>
                             <div className={styles.formGroup}>
                                 <label>Number</label>
-                                <input name="number" onChange={this.handleChange} className={styles.textField} placeholder="add number"
+                                <input value={number} name="number" onChange={this.handleChange} className={styles.textField} placeholder="add number"
                                   type="text"
                                 //   name="name"
                                   pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
