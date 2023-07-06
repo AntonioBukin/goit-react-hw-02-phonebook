@@ -45,6 +45,16 @@ class MyPhone extends Component {
         })
     }
 
+    onDeletePhone(id) {
+        this.setState(prevState => {
+            const newContacts = prevState.contacts.filter(contact => contact.id !== id)
+
+            return {
+                contacts: newContacts,
+            }
+        })
+    }
+
     isDublicate() {
         const {name, number, contacts} = this.state;
         const normalizedName = name.toLowerCase();
@@ -62,7 +72,7 @@ class MyPhone extends Component {
 
         const elements = contacts.map(({id, name, number}) => (
             <li className={styles.listItem} key={id}>
-                Name: {name}, Number: {number}. <button>delete</button>
+                Name: {name}, Number: {number}. <button onClick={()=> this.onDeletePhone(id)}>delete</button>
             </li>
 
         ))
