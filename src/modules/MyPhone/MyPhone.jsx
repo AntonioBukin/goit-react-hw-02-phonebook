@@ -67,8 +67,23 @@ class MyPhone extends Component {
         return Boolean(dublicate);
     }
 
+    getFilteredPhone() {
+        const {filter, contacts} = this.state;
+        if(!filter) {
+            return contacts;
+        }
+        const normalizedFilter = filter.toLowerCase();
+        const result = contacts.filter(({name, number}) => {
+            return (name.toLowerCase().includes(normalizedFilter) || number.toLowerCase().includes(normalizedFilter))
+        })
+
+        return result;
+    }
+
     render() { //пишемо метод render, який буде повертати розмітку
-        const {name, number, contacts} = this.state;
+        const {name, number} = this.state;
+
+        const contacts = this.getFilteredPhone();
 
         const elements = contacts.map(({id, name, number}) => (
             <li className={styles.listItem} key={id}>
@@ -107,7 +122,7 @@ class MyPhone extends Component {
                         </form>
                     </MyPhoneBlock>
                     <MyPhoneBlock title="Find contacts by name">
-                        <input className={styles.textField} placeholder="enter number" />
+                        <input name="filter" onChange={this.handleChange} className={styles.textField} placeholder="enter number" />
                         <ol className={styles.list}>
                             {elements}
                         </ol>
