@@ -1,6 +1,6 @@
 import { Component } from "react";
 
-import styles from "./my-phone-form.modules.scss";
+import styles from "./my-phone-form.module.scss";
 
 class MyPhoneForm extends Component {
     state = {
@@ -32,7 +32,7 @@ class MyPhoneForm extends Component {
         return (
             <form onSubmit={this.handleSubmit} className={styles.form}>
                             <div className={styles.formGroup}>
-                                <label>Name</label>
+                                <label>Name:</label>
                                 <input value={name} name="name" onChange={this.handleChange} className={styles.textField} placeholder="add name"
                                   type="text"
                                 //   name="name"
@@ -42,7 +42,7 @@ class MyPhoneForm extends Component {
                                 {/* <input className={styles.textField} placeholder="add name"/> */}
                             </div>
                             <div className={styles.formGroup}>
-                                <label>Number</label>
+                                <label>Number:</label>
                                 <input value={number} name="number" onChange={this.handleChange} className={styles.textField} placeholder="add number"
                                   type="text"
                                 //   name="name"
