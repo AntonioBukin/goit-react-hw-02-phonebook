@@ -51,7 +51,7 @@ class MyPhoneForm extends Component {
                                   required/>
                                 {/* <input className={styles.textField} placeholder="add name"/> */}
                             </div>
-                            <button type="submit">Add contacts</button>
+                            <button className={styles.button} type="submit">Add contacts</button>
                         </form>
         )
 

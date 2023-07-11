@@ -1,8 +1,9 @@
 .form {
+    width: 400px;
     border: 1px solid;
-    border-radius: 10px;
+    border-radius: 8px;
     padding: 15px;
-    background-color: rgb(0, 136, 255);
+    background-color: rgb(12, 91, 250);
 }
 
 .formGroup {
@@ -13,4 +14,13 @@
 
 .textField {
     padding: 5px;
+}
+
+.button {
+    padding: 10px;
+    margin-top: 10px;
+    width: 30%;
+    color: rgb(9, 32, 241);
+    background-color: rgb(253, 236, 4);
+    border-radius: 5px;
 }
