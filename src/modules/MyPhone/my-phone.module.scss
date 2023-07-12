@@ -7,13 +7,13 @@
     font-weight: bold;
     font-size: 19px;
     margin-bottom: 25px;
-    color: red;
+    color: rgb(12, 91, 250);
 }
 
 .blocks {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
+    display: block;
+    // justify-content: center;
+    // align-items: center;
     gap: 40px;
 }
 
