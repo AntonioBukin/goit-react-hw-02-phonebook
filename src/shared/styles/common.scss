@@ -4,9 +4,13 @@
 }
 
 .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 10px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    //max-width: 1200px;
+    //margin: 0 auto;
+    //padding: 10px auto;
+    
     
 
 }

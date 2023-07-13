@@ -4,6 +4,7 @@
     border-radius: 8px;
     padding: 15px;
     background-color: rgb(12, 91, 250);
+    
 }
 
 .formGroup {
@@ -29,4 +30,12 @@
     border: none;
     border-radius: 6px;
     margin: 15px 0 0 auto;
+    padding: 8px;
+    font: inherit;
+    cursor: pointer;
+    transition: .4s;
+}
+
+.button:hover {
+    background-color: rgb(251, 237, 112);
 }
