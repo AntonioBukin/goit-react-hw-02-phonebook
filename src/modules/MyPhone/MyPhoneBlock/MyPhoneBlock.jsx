@@ -1,5 +1,6 @@
 import styles from "./my-phone-block.module.scss";
 
+
 const MyPhoneBlock = ({title, children}) => { //в пропсах отримуємо title та children, який нам передадуть
     return (
         <div className={styles.wrapper}>
@@ -7,7 +8,6 @@ const MyPhoneBlock = ({title, children}) => { //в пропсах отримує
             {children}
         </div>
     )
-
 }
 
 export default MyPhoneBlock;
