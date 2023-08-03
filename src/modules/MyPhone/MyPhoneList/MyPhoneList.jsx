@@ -1,3 +1,4 @@
+import propTypes from "prop-types";
 import styles from "./my-phone-list.module.scss";
 
 const MyPhoneList = ({contacts, onDeletePhone}) => {
@@ -13,5 +14,18 @@ const MyPhoneList = ({contacts, onDeletePhone}) => {
     </ol>)
 
 }
+
+MyPhoneList.propTypes = {
+    contacts: propTypes.arrayOf(
+        propTypes.exact({
+        id: propTypes.string.isRequired,
+        name: propTypes.string.isRequired,
+        number: propTypes.string.isRequired,
+    })
+    ),
+    onDeletePhone: propTypes.func.isRequired,
+};
+
+
 
 export default MyPhoneList;

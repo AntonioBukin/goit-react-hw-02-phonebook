@@ -1,5 +1,5 @@
 import { Component } from "react";
-
+import propTypes from "prop-types";
 import styles from "./my-phone-form.module.scss";
 
 class MyPhoneForm extends Component {
@@ -58,5 +58,9 @@ class MyPhoneForm extends Component {
     }
 
 }
+
+MyPhoneForm.propTypes = {
+    handleSubmit: propTypes.func.isRequired,
+};
 
 export default MyPhoneForm;

@@ -1,3 +1,4 @@
+import propTypes from "prop-types";
 import styles from "./my-phone-block.module.scss";
 
 
@@ -9,5 +10,10 @@ const MyPhoneBlock = ({title, children}) => { //в пропсах отримує
         </div>
     )
 }
+
+MyPhoneBlock.propTypes = {
+    title: propTypes.string.isRequired,
+    children: propTypes.node.isRequired,
+};
 
 export default MyPhoneBlock;
